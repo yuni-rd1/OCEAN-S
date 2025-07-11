@@ -95,11 +95,25 @@
         max-width: 100%;
       }
     }
+    /* タイトル画像をレスポンシブ対応にする */
+.header-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 480px) {
+  .header-image {
+    max-width: 100%;
+  }
+}
   </style>
 </head>
 <body>
   <header>
-    <h1>O<img src="素材1.png" alt="OCEAN'S画像"></h1>
+    <h1><img src="素材1.png" alt="OCEAN'S画像" class="header-image"></h1>
   </header>
   
   <nav>
