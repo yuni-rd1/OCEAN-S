@@ -6,8 +6,7 @@ body {
 }
 
 header, footer {
-  background-color: #e0ffff;
-  color: #000
+  background-color: #000;
   padding: 1em;
   text-align: center;
 }
