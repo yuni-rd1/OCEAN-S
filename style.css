@@ -33,15 +33,11 @@ header, footer {
 }
 
 .motto {
-  font-size: 1.8em;         /* 大きく */
+  font-size: 1.6em;         /* 大きく */
   font-weight: bold;        /* 太く */
   color: #ffd700;           /* ゴールドで目立たせる */
   text-align: center;       /* 中央寄せ */
-  background-color: rgba(0, 0, 0, 0.3); /* ちょっと背景強調 */
-  padding: 1em;
-  border-radius: 10px;
-  margin-top: 1em;
-  border: 2px solid #fff;
+  
 }
 
 .video-gallery {
