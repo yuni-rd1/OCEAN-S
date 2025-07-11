@@ -17,6 +17,20 @@ header, footer {
   display: block;
   margin: 0 auto;
 }
+.insta-button {
+  display: inline-block;
+  background-color: #e1306c;
+  color: white;
+  padding: 0.75em 1.5em;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.insta-button:hover {
+  background-color: #c2185b;
+}
 
 
 nav {
