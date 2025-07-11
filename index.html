@@ -1,134 +1,55 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ocean's公式ホームページ
-</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(to bottom, #87ceeb, #1e90ff);
-      color: #fff;
-    }
-    header, footer {
-      background-color: rgba(0, 0, 50, 0.6);
-      padding: 1em;
-      text-align: center;
-    }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1em;
-      margin: 1em 0;
-    }
-    nav a {
-      display: inline-block;
-      color: #fff;
-      text-decoration: none;
-      background-color: rgba(255, 255, 255, 0.2);
-      padding: 0.75em 1.5em;
-      border-radius: 8px;
-      font-size: 1.1em;
-      transition: background 0.3s;
-    }
-    nav a:hover {
-      background-color: rgba(255, 255, 255, 0.4);
-    }
-    section {
-      padding: 2em;
-      max-width: 800px;
-      margin: auto;
-    }
-    .album {
-      display: none;
-    }
-    .password-form {
-      background-color: rgba(255, 255, 255, 0.2);
-      padding: 1em;
-      border-radius: 10px;
-      max-width: 400px;
-      margin: 1em auto;
-      text-align: center;
-    }
-    input[type="password"] {
-      padding: 0.5em;
-      border: none;
-      border-radius: 5px;
-    }
-    button {
-      padding: 0.5em 1em;
-      border: none;
-      border-radius: 5px;
-      margin-top: 0.5em;
-      cursor: pointer;
-      background-color: #fff;
-      color: #1e90ff;
-    }
-    iframe {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      max-width: 100%;
-      border: 0;
-    }
-     @media screen and (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.75em;
-      }
-      nav a {
-        width: 90%;
-        text-align: center;
-        font-size: 1.2em;
-        padding: 1em;
-      }
-      section {
-        padding: 1em;
-      }
-      iframe {
-        width: 100%;
-        aspect-ratio: 4 / 3;
-        max-width: 100%;
-      }
-    }
-    /* タイトル画像をレスポンシブ対応にする */
-.header-image {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-@media screen and (max-width: 480px) {
-  .header-image {
-    max-width: 100%;
-  }
-}
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OCEAN'S公式ホームページ</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1><img src="/名称未設定のデザイン.png.jpeg" ="OCEAN'S画像" class="header-image"></h1>
+    <h1>OCEAN'S 公式ホームページ</h1>
   </header>
-  
+
   <nav>
-    <a href="#news">お知らせ</a>
-    <a href="#guide">入団案内</a>
     <a href="#message">OCEAN'Sのモットー</a>
-    <a href="#contact">連絡先</a>
+    <a href="#news">お知らせ</a>
+    <a href="#ocen">専用ページ</a>
+    <a href="#guide">入団案内</a>
     <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
     <a href="#location">練習場所</a>
-    <a href="#ocen">OCEAN'S専用ページ</a>
+    <a href="#contact">連絡先</a>
   </nav>
-  
+
+  <section id="message">
+    <h2>🌊 OCEAN'Sのモットー</h2>
+    <p>「日本一カッコいいチーム」</p>
+  </section>
+
   <section id="news">
     <h2>📢 お知らせ</h2>
     <p>7/21（月）は、港まつりのため練習お休みです。</p>
+  </section>
+
+  <section id="ocen">
+    <h2>🧜 OCEAN'S専用ページ</h2>
+
+    <div class="password-form" id="password-form">
+      <p>パスワードを入力してください。</p>
+      <input type="password" id="access-password" placeholder="パスワード" />
+      <button onclick="checkAccessPassword()">送信</button>
+      <p id="error-message" style="color: yellow;"></p>
+    </div>
+
+    <section id="schedule" style="display:none;">
+      <h2>📅 スケジュール</h2>
+      <p>ここにGoogleカレンダーや予定表を埋め込めます。</p>
+    </section>
+
+    <section id="album" style="display:none;">
+      <h2>📸 アルバム</h2>
+      <iframe src="https://www.youtube.com/embed/videoseries?list=PLTiAeyw5oCw_n1q7qi8jXMQRtyHShusvG" allowfullscreen></iframe>
+    </section>
   </section>
 
   <section id="guide">
@@ -136,9 +57,13 @@
     <p>入団をご希望の方は <a href="nyudan.html">こちら</a> をご確認ください。</p>
   </section>
 
-  <section id="message">
-    <h2>🌊 OCEAN'Sのモットー</h2>
-    <p>「日本一カッコいいチーム」</p>
+  <section id="location">
+    <h2>📍 練習場所</h2>
+    <p>野跡小学校 体育館</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3265.0855014865456!2d136.8522490763488!3d35.07959636278785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037857fa6f0a1f%3A0xf86a2dfedf3e3b47!2z5ZCN5Y-k5bGL5biC56uL6YeO6Leh5bCP5a2m5qCh!5e0!3m2!1sja!2sjp!4v1752217172900!5m2!1sja!2sjp" allowfullscreen="" loading="lazy"></iframe>
+
+    <p>相原小学校 体育館</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3265.2065668480955!2d136.96305267634875!3d35.07657116295157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037cbed17d3b99%3A0x19f95844898edb18!2z44CSNDU4LTAwMzQg5oSb55-l55yM5ZCN5Y-k5bGL5biC57eR5Yy66Iul55Sw77yT5LiB55uuIOebuOWOn-Wwj-WtpuagoQ!5e0!3m2!1sja!2sjp!4v1752217319093!5m2!1sja!2sjp" allowfullscreen="" loading="lazy"></iframe>
   </section>
 
   <section id="contact">
@@ -146,51 +71,24 @@
     <p>メール: howarin25@yahoo.co.jp<br>電話: 090-4328-1359</p>
   </section>
 
-  <section id="location">
-    <h2>📍 練習場所の案内</h2>
-    <p>野跡小学校 体育館</p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3265.0855014865456!2d136.8522490763488!3d35.07959636278785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037857fa6f0a1f%3A0xf86a2dfedf3e3b47!2z5ZCN5Y-k5bGL5biC56uL6YeO6Leh5bCP5a2m5qCh!5e0!3m2!1sja!2sjp!4v1752217172900!5m2!1sja!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <p>相原小学校 体育館</p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3265.2065668480955!2d136.96305267634875!3d35.07657116295157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037cbed17d3b99%3A0x19f95844898edb18!2z44CSNDU4LTAwMzQg5oSb55-l55yM5ZCN5Y-k5bGL5biC57eR5Yy66Iul55Sw77yT5LiB55uuIOebuOWOn-Wwj-WtpuagoQ!5e0!3m2!1sja!2sjp!4v1752217319093!5m2!1sja!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </section>
+  <footer>
+    <p>&copy; 2025 OCEAN'S All Rights Reserved.</p>
+  </footer>
 
-  <section id="schedule" style="display:none;">
-  <h2>📅 スケジュール</h2>
-  <p>タイムツリーやGoogleカレンダーの埋め込み等も可能です。</p>
-</section>
-
-<section id="album" style="display:none;">
-  <h2>📸 アルバム</h2>
-  <iframe src="https://youtube.com/playlist?list=PLTiAeyw5oCw_n1q7qi8jXMQRtyHShusvG&si=gRjFztQeKtE00xY" allowfullscreen></iframe>
-</section>
-  <section id="ocen">
-    <h2>🧜OCEAN'S専用ページ</h2>
-    
-  </section>
-
-
-<div class="password-form" id="password-form" style="max-width:400px; margin:1em auto; background-color: rgba(255, 255, 255, 0.2); padding:1em; border-radius:10px; text-align:center;">
-  <p>OCEAN'S専用ページです。パスワードを入力してください。</p>
-  <input type="password" id="access-password" placeholder="パスワード" />
-  <button onclick="checkAccessPassword()">送信</button>
-  <p id="error-message" style="color: yellow;"></p>
-</div>
-
-<script>
-  function checkAccessPassword() {
-    const input = document.getElementById('access-password').value;
-    const correct = "nihon1"; // パスワード
-
-    if (input === correct) {
-      document.getElementById('password-form').style.display = 'none';
-      document.getElementById('schedule').style.display = 'block';
-      document.getElementById('album').style.display = 'block';
-    } else {
-      document.getElementById('error-message').textContent = "パスワードがちがいます。";
+  <script>
+    function checkAccessPassword() {
+      const input = document.getElementById('access-password').value;
+      const correct = "nihon1"; // パスワード
+      if (input === correct) {
+        document.getElementById('password-form').style.display = 'none';
+        document.getElementById('schedule').style.display = 'block';
+        document.getElementById('album').style.display = 'block';
+      } else {
+        document.getElementById('error-message').textContent = "パスワードがちがいます。";
+      }
     }
-  }
-</script>
-
-
+  </script>
 </body>
 </html>
+
+
