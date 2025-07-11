@@ -43,6 +43,7 @@ header, footer {
   margin-top: 1em;
   border: 2px solid #fff;
 }
+
 .video-gallery {
   display: flex;
   flex-wrap: wrap;
