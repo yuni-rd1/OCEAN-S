@@ -10,14 +10,14 @@ header, footer {
   padding: 1em;
   text-align: center;
 }
-
 .header-image {
-  width: 100%;
-  max-width: 600px;
+  width: 80%;       /* 画面幅の80%に縮小 */
+  max-width: 300px; /* 最大幅300pxに制限 */
   height: auto;
   display: block;
   margin: 0 auto;
 }
+
 
 nav {
   display: flex;
