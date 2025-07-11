@@ -43,6 +43,31 @@ header, footer {
   margin-top: 1em;
   border: 2px solid #fff;
 }
+.video-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+}
+
+.video-gallery a {
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+.video-gallery img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+.video-gallery p {
+  margin-top: 0.5em;
+  font-size: 1em;
+}
 
 nav {
   display: flex;
