@@ -26,11 +26,13 @@
       margin: 1em 0;
     }
     nav a {
+      display: inline-block;
       color: #fff;
       text-decoration: none;
       background-color: rgba(255, 255, 255, 0.2);
-      padding: 0.5em 1em;
-      border-radius: 5px;
+      padding: 0.75em 1.5em;
+      border-radius: 8px;
+      font-size: 1.1em;
       transition: background 0.3s;
     }
     nav a:hover {
@@ -72,10 +74,17 @@
       max-width: 100%;
       border: 0;
     }
-    @media screen and (max-width: 600px) {
+     @media screen and (max-width: 600px) {
       nav {
         flex-direction: column;
         align-items: center;
+        gap: 0.75em;
+      }
+      nav a {
+        width: 90%;
+        text-align: center;
+        font-size: 1.2em;
+        padding: 1em;
       }
       section {
         padding: 1em;
@@ -98,12 +107,12 @@
     <a href="#guide">入団案内</a>
     <a href="#message">OCEAN'Sのモットー</a>
     <a href="#contact">連絡先</a>
-    <a href="https://www.instagram.com" target="_blank">Instagram</a>
+    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
     <a href="#location">練習場所</a>
     <a href="#schedule">スケジュール</a>
     <a href="#album">アルバム</a>
   </nav>
-
+  
   <section id="news">
     <h2>📢 お知らせ</h2>
     <p>7/21（月）は、港まつりのため練習お休みです。</p>
@@ -137,34 +146,33 @@
     <p>タイムツリー</p>
   </section>
 
-  <section id="album">
-    <h2>📸 アルバム</h2>
-    <div class="password-form" id="password-form">
-      <p>アルバムは保護者専用です。パスワードを入力してください。</p>
-      <input type="password" id="album-password" placeholder="パスワード">
-      <button onclick="checkPassword()">送信</button>
-      <p id="error-message" style="color: yellow;"></p>
-    </div>
-    <div class="album" id="album-content">
-      <iframe src="https://youtube.com/playlist?list=PLTiAeyw5oCw_n1q7qi8jXMQRtyHShusvG&si=gRjFztQeKtE00xY" allowfullscreen></iframe>
-    </div>
-  </section>
+<section id="album" style="display:none;">
+  <h2>📸 アルバム</h2>
+  <iframe src="https://youtube.com/playlist?list=PLTiAeyw5oCw_n1q7qi8jXMQRtyHShusvG&si=gRjFztQeKtE00xY" allowfullscreen></iframe>
+</section>
 
-  <footer>
-    <p>&copy; 2025 OCEAN'S All Rights Reserved.</p>
-  </footer>
+<div class="password-form" id="password-form" style="max-width:400px; margin:1em auto; background-color: rgba(255, 255, 255, 0.2); padding:1em; border-radius:10px; text-align:center;">
+  <p>OCEAN'S専用ページです。パスワードを入力してください。</p>
+  <input type="password" id="access-password" placeholder="パスワード" />
+  <button onclick="checkAccessPassword()">送信</button>
+  <p id="error-message" style="color: yellow;"></p>
+</div>
 
-  <script>
-    function checkPassword() {
-      const input = document.getElementById('album-password').value;
-      const correct = "oceans2025";
-      if (input === correct) {
-        document.getElementById('password-form').style.display = 'none';
-        document.getElementById('album-content').style.display = 'block';
-      } else {
-        document.getElementById('error-message').textContent = "パスワードがちがいます。";
-      }
+<script>
+  function checkAccessPassword() {
+    const input = document.getElementById('access-password').value;
+    const correct = "nihon1"; // パスワード
+
+    if (input === correct) {
+      document.getElementById('password-form').style.display = 'none';
+      document.getElementById('schedule').style.display = 'block';
+      document.getElementById('album').style.display = 'block';
+    } else {
+      document.getElementById('error-message').textContent = "パスワードがちがいます。";
     }
-  </script>
+  }
+</script>
+
+
 </body>
 </html>
