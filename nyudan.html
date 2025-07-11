@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OCEAN'S 入団案内</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #87ceeb, #1e90ff);
+      color: #fff;
+      margin: 0;
+      padding: 2em;
+      text-align: center;
+    }
+    .password-form {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 2em;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: 3em auto;
+    }
+    input[type="password"] {
+      padding: 0.5em;
+      border: none;
+      border-radius: 5px;
+      width: 80%;
+      font-size: 1em;
+    }
+    button {
+      margin-top: 1em;
+      padding: 0.5em 1.2em;
+      border: none;
+      border-radius: 5px;
+      background-color: #fff;
+      color: #1e90ff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .content {
+      display: none;
+      max-width: 800px;
+      margin: auto;
+      text-align: left;
+      background-color: rgba(0,0,50,0.5);
+      padding: 1em 2em;
+      border-radius: 10px;
+    }
+    a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>OCEAN'S 入団案内</h1>
+
+  <div class="password-form" id="password-form">
+    <p>資料を見るにはパスワードを入力してください。</p>
+    <input type="password" id="password" placeholder="パスワード" />
+    <br />
+    <button onclick="checkPassword()">送信</button>
+    <p id="error-msg" style="color: yellow;"></p>
+  </div>
+
+  <div class="content" id="content">
+    <h2>入団説明資料</h2>
+    <ul>
+      <li><a href="入団案内資料.pdf" target="_blank">入団案内PDF資料ダウンロード</a></li>
+      <li><a href="https://example.com/詳細説明ページ" target="_blank">詳細説明ページ</a></li>
+    </ul>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('password').value;
+      const correct = "youkoso";
+      const errorMsg = document.getElementById('error-msg');
+      const content = document.getElementById('content');
+      const form = document.getElementById('password-form');
+
+      if (input === correct) {
+        form.style.display = 'none';
+        content.style.display = 'block';
+      } else {
+        errorMsg.textContent = "パスワードが違います。";
+      }
+    }
+  </script>
+</body>
+</html>
